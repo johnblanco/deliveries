@@ -1,5 +1,31 @@
-%h1
-  Productos
-- @products.each do |p|
-  %p
-    = p.name
+.container
+  .row
+    .col-md-8
+      .row
+        .col-md-4
+          %select.form-control
+            %option
+              Saltar a sección...
+            - @categories.each do |category|
+              %option
+                = category.name
+        .col-md-4.pull-right
+          %input.form-control{:placeholder => "Buscar en el menú"}
+      .row
+        .col-md-8
+          %legend
+            Lista de comidas
+
+          - @categories.each do |category|
+            %label.category-name
+              = category.name
+            %img{:src => category.picture }
+
+            - category.products.each do |product|
+              .row
+                .col-md3
+                  %label
+                    = product.name
+    .col-md-3.col-md-offset-1
+      %label
+        Mi pedido
