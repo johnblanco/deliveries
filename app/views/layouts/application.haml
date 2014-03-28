@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title Deliveries
+    = stylesheet_link_tag    "bootstrap", :media => "all"
+    = stylesheet_link_tag    "app", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "#"}
+            %img{src: "/images/logo.png"}/
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{href: "#"} Menú
+            %li
+              %a{href: "#/zona-de-entrega"} Zona de entrega
+            %li
+              %a{href: "#/contacto"} Contacto
+          %ul.nav.navbar-nav.pull-right
+            %li
+              %a{href: "#"} Registrarme
+            %li
+              %a{href: "#contact"} Ingresar
+    = yield
