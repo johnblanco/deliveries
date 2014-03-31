@@ -52,3 +52,53 @@ body {
   text-align: center;
   padding-top: 10px;
 }
+
+
+.product{
+  border: 1px solid #b6c2d4;
+  background-color: #dee0ec;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 2px;
+  height: 145px;
+}
+
+.product:hover{
+  background-color: #edeffb;
+  cursor: pointer;
+}
+
+.add-to-cart{
+  display: none;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+
+.product:hover .add-to-cart{
+  display: block;
+}
+
+.product .description{
+  font-style: italic;
+  color: #474747;
+  height: 60px;
+}
+
+.category-name{
+  font-size: 18px;
+}
+
+.extra-air{
+  margin-top: 75px;
+}
+
+.fork-icon{
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+
+.margin-right-extra{
+  margin-right: 60px;
+}

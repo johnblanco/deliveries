@@ -1,31 +1,36 @@
 .container
+  .row.extra-air
+    .col-md-4
+      %select.form-control
+        %option
+          Saltar a sección...
+        - @categories.each do |category|
+          %option
+            = category.name
+    .col-md-4.pull-right
+      %input.form-control{:placeholder => "Buscar en el menú"}
   .row
     .col-md-8
-      .row
-        .col-md-4
-          %select.form-control
-            %option
-              Saltar a sección...
-            - @categories.each do |category|
-              %option
-                = category.name
-        .col-md-4.pull-right
-          %input.form-control{:placeholder => "Buscar en el menú"}
-      .row
-        .col-md-8
-          %legend
-            Lista de comidas
+      %legend
+        Lista de comidas
 
-          - @categories.each do |category|
-            %label.category-name
-              = category.name
-            %img{:src => category.picture }
-
-            - category.products.each do |product|
-              .row
-                .col-md3
-                  %label
-                    = product.name
-    .col-md-3.col-md-offset-1
-      %label
-        Mi pedido
+  - @categories.each do |category|
+    .row
+      .col-md-6
+        %img{:src => category.picture }
+        %label.category-name
+          = category.name
+    .row
+      - category.products.each do |product|
+        .col-md-5.product
+          %label.name
+            = product.name
+          %label.price.pull-right
+            = "$#{product.price}"
+          %p.description
+            = product.description
+          .row
+            .col-md-4.pull-right.add-to-cart
+              %button.btn.btn-primary.btn-sm
+                %span.glyphicon.glyphicon-cutlery.fork-icon
+                Agregar al pedido
