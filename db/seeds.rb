@@ -85,5 +85,6 @@ Business.create(:name=> "Mario's Pizzas",
                 :logo => "/images/logo.png",
                 :phone => "2902 14 59",
                 :address => "18 de julio 2321",
+                :company_type => "restaurant",
                 :email => "marios@pizzas.com"
 )

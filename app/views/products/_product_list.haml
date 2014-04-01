@@ -6,24 +6,23 @@
         = products[i].name
       %label.price.pull-right
         = "$#{products[i].price}"
-      %p.description
-        = products[i].description
       .row
-        .col-md-4.pull-right.add-to-cart
-          %button.btn.btn-primary.btn-sm
-            %span.glyphicon.glyphicon-cutlery.fork-icon
-            Agregar al pedido
+        .col-md-10.description
+          = products[i].description
+        .col-md-2.pull-right
+          %button.btn.btn-primary.btn-sm.add-to-cart-button
+            %span.glyphicon.glyphicon-plus
     - if i+1 < products.length
       .col-md-5.pull-right.product
         %label.name
           = products[i+1].name
         %label.price.pull-right
           = "$#{products[i+1].price}"
-        %p.description
-          = products[i+1].description
         .row
-          .col-md-4.pull-right.add-to-cart
-            %button.btn.btn-primary.btn-sm
-              %span.glyphicon.glyphicon-cutlery.fork-icon
-              Agregar al pedido
+          .col-md-10.description
+            = products[i+1].description
+          .col-md-2.pull-right
+            %button.btn.btn-primary.btn-sm.add-to-cart-button
+              - if @current_business.company_type == "restaurant"
+              %span.glyphicon.glyphicon-plus
   - i+=2

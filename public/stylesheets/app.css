@@ -72,7 +72,6 @@ body {
   margin: 0 10px 0 0;
 }
 
-
 .product:hover .add-to-cart{
   display: block;
 }
@@ -90,16 +89,15 @@ body {
   margin-top: 75px;
 }
 
-.fork-icon{
+.add-to-cart-button{
   font-size: 12px;
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .some-left-air{
   margin-left: 35px;
 }
-
-
 
 .margin-right-extra{
   margin-right: 60px;
