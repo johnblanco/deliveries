@@ -20,17 +20,4 @@
         %img{:src => category.picture }
         %label.category-name
           = category.name
-    .row
-      - category.products.each do |product|
-        .col-md-5.product
-          %label.name
-            = product.name
-          %label.price.pull-right
-            = "$#{product.price}"
-          %p.description
-            = product.description
-          .row
-            .col-md-4.pull-right.add-to-cart
-              %button.btn.btn-primary.btn-sm
-                %span.glyphicon.glyphicon-cutlery.fork-icon
-                Agregar al pedido
+    = render partial: "products/product_list", :locals => {:products => category.products}

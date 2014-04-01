@@ -1,0 +1,29 @@
+- i = 0
+- while i < products.length do
+  .row
+    .col-md-5.product.some-left-air
+      %label.name
+        = products[i].name
+      %label.price.pull-right
+        = "$#{products[i].price}"
+      %p.description
+        = products[i].description
+      .row
+        .col-md-4.pull-right.add-to-cart
+          %button.btn.btn-primary.btn-sm
+            %span.glyphicon.glyphicon-cutlery.fork-icon
+            Agregar al pedido
+    - if i+1 < products.length
+      .col-md-5.pull-right.product
+        %label.name
+          = products[i+1].name
+        %label.price.pull-right
+          = "$#{products[i+1].price}"
+        %p.description
+          = products[i+1].description
+        .row
+          .col-md-4.pull-right.add-to-cart
+            %button.btn.btn-primary.btn-sm
+              %span.glyphicon.glyphicon-cutlery.fork-icon
+              Agregar al pedido
+  - i+=2

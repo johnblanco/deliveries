@@ -59,8 +59,7 @@ body {
   background-color: #dee0ec;
   padding: 5px;
   border-radius: 4px;
-  margin: 2px;
-  height: 145px;
+  /*margin: 2px;*/
 }
 
 .product:hover{
@@ -70,7 +69,6 @@ body {
 
 .add-to-cart{
   display: none;
-  height: 40px;
   margin: 0 10px 0 0;
 }
 
@@ -82,7 +80,6 @@ body {
 .product .description{
   font-style: italic;
   color: #474747;
-  height: 60px;
 }
 
 .category-name{
@@ -97,6 +94,11 @@ body {
   font-size: 12px;
   margin-right: 5px;
 }
+
+.some-left-air{
+  margin-left: 35px;
+}
+
 
 
 .margin-right-extra{
