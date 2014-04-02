@@ -1,5 +1,7 @@
 Deliveries::Application.routes.draw do
   resources :products
+  get '/modal_content/:id', :controller => "products", :action => "modal_content"
+
   root :to => "products#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,7 +1,7 @@
 - i = 0
 - while i < products.length do
   .row
-    .col-md-5.product.some-left-air
+    .col-md-5.product.some-left-air{:product_id => products[i].id}
       %label.name
         = products[i].name
       %label.price.pull-right
@@ -10,10 +10,13 @@
         .col-md-10.description
           = products[i].description
         .col-md-2.pull-right
-          %button.btn.btn-primary.btn-sm.add-to-cart-button
-            %span.glyphicon.glyphicon-plus
+          %button.btn.btn-primary.btn-sm.add-to-cart
+            - if @business.company_type == "restaurant"
+              %span.glyphicon.glyphicon-cutlery
+            - else
+              %span.glyphicon.glyphicon-plus
     - if i+1 < products.length
-      .col-md-5.pull-right.product
+      .col-md-5.pull-right.product{:product_id => products[i+1].id}
         %label.name
           = products[i+1].name
         %label.price.pull-right
@@ -22,7 +25,9 @@
           .col-md-10.description
             = products[i+1].description
           .col-md-2.pull-right
-            %button.btn.btn-primary.btn-sm.add-to-cart-button
-              - if @current_business.company_type == "restaurant"
-              %span.glyphicon.glyphicon-plus
+            %button.btn.btn-primary.btn-sm.add-to-cart
+              - if @business.company_type == "restaurant"
+                %span.glyphicon.glyphicon-cutlery
+              - else
+                %span.glyphicon.glyphicon-plus
   - i+=2

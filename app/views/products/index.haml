@@ -14,10 +14,27 @@
       %legend
         Lista de comidas
 
-  - @categories.each do |category|
-    .row
-      .col-md-6
-        %img{:src => category.picture }
-        %label.category-name
-          = category.name
-    = render partial: "products/product_list", :locals => {:products => category.products}
+  .row
+    .col-md-8
+      - @categories.each do |category|
+        .row
+          .col-md-6
+            %img{:src => category.picture }
+            %label.category-name
+              = category.name
+        = render partial: "products/product_list", :locals => {:products => category.products}
+    .col-md-4
+      %p
+        mi pedido
+
+.modal.fade#add_to_cart_modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Agregar al pedido
+      .modal-body
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancelar
+        %button.btn.btn-primary#add_to_delivery{type: "button"} Agregar a mi pedido

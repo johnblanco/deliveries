@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20140328183452) do
     t.string "logo"
     t.string "phone"
     t.string "address"
+    t.string "company_type"
     t.string "email"
   end
 
