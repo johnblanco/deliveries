@@ -26,6 +26,8 @@
     .col-md-4
       %p
         mi pedido
+      #cart_items
+        = render partial: "carts/items", :locals => {:items => @current_items}
 
 .modal.fade#add_to_cart_modal
   .modal-dialog

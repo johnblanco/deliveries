@@ -1,0 +1,12 @@
+- if items.empty?
+  %p
+    lista vacia
+- else
+  %ul
+    - items.each do |item|
+      %li
+        - if item.amount > 1
+          = "#{item.amount} x #{item.product.name} - $#{item.product.price}"
+        -else
+          = "#{item.product.name} - $#{item.product.price}"
+        %span.glyphicon.glyphicon-remove.remove_item{:item_id => item.id}

@@ -5,11 +5,12 @@
     = "$ " + @product.price.to_s
 %p#modal_description
   = @product.description
-%textarea.form-control.comments{:rows=> 3,:placeholder => "Aclaraciones adicionales (opcional)"}
+%textarea.form-control#comments{:rows=> 3,:placeholder => "Aclaraciones adicionales (opcional)"}
 %input#product_id_hidden{:type=>"hidden", :value=> @product.id}
 
 .row
   .col-md-2
     %select.form-control#amount
-      %option
-        1
+      - 10.times do |i|
+        %option
+          = i + 1
