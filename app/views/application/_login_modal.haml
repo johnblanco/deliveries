@@ -1,0 +1,26 @@
+.modal.fade#login_modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Iniciar sesion / Registrarse
+      .modal-body
+        .row
+          .col-md-6
+            %label
+              Iniciar sesión
+            .form-group
+              %input.form-control#email{:type=>"text", :placeholder => "Correo electrónico"}
+            .form-group
+              %input.form-control#password{:type=>"password", :placeholder => "Contraseña"}
+            %button.btn.btn-primary#login_btn{type: "button"} Ingresar
+          .col-md-6
+            %label
+              Registrarme
+            .form-group
+              %input.form-control#register_email{:type=>"text", :placeholder => "Correo electrónico"}
+            .form-group
+              %input.form-control#register_password{:type=>"password", :placeholder => "Contraseña"}
+            .form-group
+              %input.form-control#repeat_password{:type=>"password", :placeholder => "Repetir contraseña"}
+            %button.btn.btn-primary#register_btn{type: "button"} Registrarme

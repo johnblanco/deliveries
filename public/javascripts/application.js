@@ -35,4 +35,17 @@ $(document).ready(function(){
       refresh_item_list();
     });
   });
+
+  $("#register, #login").click(function(){
+    $("#login_modal").modal("show");
+  });
+
+  $("#register_btn").click(function(){
+    var email = $("#register_email").val();
+    var password = $("#register_password").val();
+
+    $.post("/users",{user: {email: email, password: password}},function(data){
+      console.log(data);
+    });
+  });
 });

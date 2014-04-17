@@ -1,5 +1,7 @@
 Deliveries::Application.routes.draw do
   resources :products
+  resources :users
+
   get '/modal_content/:id', :controller => "products", :action => "modal_content"
   post '/add_to_cart', :controller => "carts", :action => "add_product"
   get '/cart_items', :controller => "carts", :action => "item_list"

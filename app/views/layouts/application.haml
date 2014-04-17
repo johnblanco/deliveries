@@ -31,12 +31,13 @@
                 %a{href: "#/contacto"} Contacto
             %ul.nav.navbar-nav.pull-right
               %li
-                %a{href: "#"} Registrarme
+                %a#register{href: "#"} Registrarme
               %li
-                %a{href: "#contact"} Ingresar
+                %a#login{href: "#contact"} Ingresar
       = yield
       #push
     #footer
       .container
         %p.credits
           = "#{@business.name} - #{@business.address} - #{@business.phone}"
+    = render partial: "application/login_modal"
